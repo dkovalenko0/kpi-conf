@@ -119,6 +119,17 @@
                 >hpc.ua.conf@gmail.com</a>
               </div>
             </div>
+
+            <div class="rightside__submission rightside__block">
+              <div class="rightside__title">Registration form</div>
+              <div class="submission__text">
+                All of the authors of each presented paper must be registered as participants of the conference via conference
+                <router-link
+                  class="callforpapers__mail"
+                  to="/registration"
+                >Web site registration form</router-link>
+              </div>
+            </div>
           </aside>
         </div>
 
@@ -180,11 +191,12 @@
                 >http://cctech.org.ua/</a>
               </li>
               <li>
-                International Theoretical Science Journal “Kibernetika i sistemnyj analiz”. The journal is being translated into English in the United States by Springer as "Cybernetics and Systems Analysis":
-                <a
-                  href="http://www.kibernetika.org/"
-                  target="_blank"
-                >http://www.kibernetika.org/</a>
+                International Theoretical Science Journal “Kibernetika i sistemnyj analiz”.
+                <span
+                  style="display:block; padding-left: 23px"
+                >The journal is being translated into English in the United States by Springer as "Cybernetics and Systems Analysis":</span>
+
+                <a href="http://www.kibernetika.org/" target="_blank">http://www.kibernetika.org/</a>
                 <a
                   href="https://www.springer.com/journal/10559"
                   target="_blank"

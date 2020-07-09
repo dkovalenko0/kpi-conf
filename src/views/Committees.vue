@@ -92,7 +92,6 @@
             <li>D.Sc. Sergii Svistunov, Ukraine</li>
             <li>Prof. Sergii Telenyk, Ukraine</li>
             <li>Prof. Gabor Terstyanszky, UK</li>
-            <li>Prof. Valentyn Tomashevsky, Ukraine</li>
             <li>Prof. Sergiy Yershov, Ukraine</li>
             <li>Prof. Valerii Zadiraka, Ukraine</li>
             <li>Prof. Yaroslav Zhurakovsky, Ukraine</li>
