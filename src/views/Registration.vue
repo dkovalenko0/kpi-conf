@@ -9,7 +9,12 @@
             </li>
           </ul>
         </div>
-        <form class="form-signin" method="post" name="form" @submit.prevent="submitHandler">
+        <form
+          class="form-signin"
+          method="post"
+          name="form"
+          @submit.prevent="submitHandler"
+        >
           <div class="input-field">
             <label for="name_of_participant">First name: *</label>
             <input
@@ -18,14 +23,14 @@
               name="name_of_participant"
               v-model="firstName"
               :class="{
-              invalid:
-                ($v.firstName.$dirty && !$v.firstName.required)
+                invalid: $v.firstName.$dirty && !$v.firstName.required,
               }"
             />
             <span
               class="invalid-text"
               v-if="$v.firstName.$dirty && !$v.firstName.required"
-            >This field is required</span>
+              >This field is required</span
+            >
           </div>
 
           <div class="input-field">
@@ -36,14 +41,14 @@
               name="name_of_participant"
               v-model="lastName"
               :class="{
-              invalid:
-                ($v.lastName.$dirty && !$v.lastName.required)
+                invalid: $v.lastName.$dirty && !$v.lastName.required,
               }"
             />
             <span
               class="invalid-text"
               v-if="$v.lastName.$dirty && !$v.lastName.required"
-            >This field is required</span>
+              >This field is required</span
+            >
           </div>
 
           <div class="input-field">
@@ -54,14 +59,14 @@
               name="name_of_participant"
               v-model="middleName"
               :class="{
-              invalid:
-                ($v.middleName.$dirty && !$v.middleName.required)
+                invalid: $v.middleName.$dirty && !$v.middleName.required,
               }"
             />
             <span
               class="invalid-text"
               v-if="$v.middleName.$dirty && !$v.middleName.required"
-            >This field is required</span>
+              >This field is required</span
+            >
           </div>
 
           <div class="input-field">
@@ -72,23 +77,24 @@
               name="email"
               v-model="email"
               :class="{
-              invalid:
-                ($v.email.$dirty && !$v.email.required) ||
-                ($v.email.$dirty && !$v.email.email)
-
+                invalid:
+                  ($v.email.$dirty && !$v.email.required) ||
+                  ($v.email.$dirty && !$v.email.email),
               }"
             />
             <span
               class="invalid-text"
               v-if="$v.email.$dirty && !$v.email.required"
-            >This field is required</span>
+              >This field is required</span
+            >
             <span
               class="invalid-text"
               v-else-if="$v.email.$dirty && !$v.email.email"
-            >Enter correct email</span>
+              >Enter correct email</span
+            >
           </div>
 
-          <div class="input-field">
+          <!-- <div class="input-field">
             <label for="phone">Phone:</label>
             <input
               class="form-styling"
@@ -96,14 +102,31 @@
               name="phone"
               v-model="phone"
               :class="{
-              invalid:
-                ($v.phone.$dirty && !$v.phone.numeric)
+                invalid: $v.phone.$dirty,
               }"
             />
-            <span
-              class="invalid-text"
-              v-if="$v.phone.$dirty && !$v.phone.numeric"
-            >Enter correct phone</span>
+            <span class="invalid-text" v-if="$v.phone.$dirty"
+              >Enter correct phone</span
+            >
+          </div> -->
+
+          <div class="input-field">
+            <label for="phone">Phone:</label>
+            <phone-mask-input
+              placeholder="start with your country code"
+              v-model="phone"
+              autoDetectCountry
+              showFlag
+              wrapperClass="wrraper-example"
+              inputClass="form-styling"
+              flagClass="flag-example"
+              :class="{
+                invalid: $v.phone.$dirty,
+              }"
+            />
+            <span class="invalid-text" v-if="$v.phone.$dirty"
+              >Enter correct phone</span
+            >
           </div>
 
           <div class="input-field">
@@ -114,32 +137,34 @@
               name="organization"
               v-model="organization"
               :class="{
-              invalid:
-                ($v.organization.$dirty && !$v.organization.required)
+                invalid: $v.organization.$dirty && !$v.organization.required,
               }"
             />
             <span
               class="invalid-text"
               v-if="$v.organization.$dirty && !$v.organization.required"
-            >This field is required</span>
+              >This field is required</span
+            >
           </div>
 
           <div class="input-field">
-            <label for="authors_of_conference_paper">Authors of conference paper: *</label>
+            <label for="authors_of_conference_paper"
+              >Authors of conference paper: *</label
+            >
             <input
               class="form-styling"
               type="text"
               name="authors_of_conference_paper"
               v-model="authors"
               :class="{
-              invalid:
-                ($v.authors.$dirty && !$v.authors.required)
+                invalid: $v.authors.$dirty && !$v.authors.required,
               }"
             />
             <span
               class="invalid-text"
               v-if="$v.authors.$dirty && !$v.authors.required"
-            >This field is required</span>
+              >This field is required</span
+            >
           </div>
 
           <div class="input-field">
@@ -148,11 +173,12 @@
               name="country"
               v-model="country"
               :class="{
-              invalid:
-                ($v.country.$dirty && !$v.country.required)
+                invalid: $v.country.$dirty && !$v.country.required,
               }"
             >
-              <option value="Choose country" selected disabled>Choose country</option>
+              <option value="Choose country" selected disabled
+                >Choose country</option
+              >
               <option value="Ukraine">Ukraine</option>
               <option value="Germany">Germany</option>
               <option value="France">France</option>
@@ -166,11 +192,14 @@
             <span
               class="invalid-text"
               v-if="$v.country.$dirty && !$v.country.required"
-            >This field is required</span>
+              >This field is required</span
+            >
           </div>
 
           <div class="input-field">
-            <label for="info_about_yourself">Brief information about yourself:</label>
+            <label for="info_about_yourself"
+              >Brief information about yourself:</label
+            >
             <textarea
               name="info_about_yourself"
               id
@@ -181,7 +210,9 @@
           </div>
 
           <div class="input-field">
-            <label for="scientific_interest">Area of scientific interest: *</label>
+            <label for="scientific_interest"
+              >Area of scientific interest: *</label
+            >
             <textarea
               name="scientific_interest"
               id
@@ -189,14 +220,19 @@
               rows="15"
               v-model="areaOfScientificInterest"
               :class="{
-              invalid:
-                ($v.areaOfScientificInterest.$dirty && !$v.areaOfScientificInterest.required)
+                invalid:
+                  $v.areaOfScientificInterest.$dirty &&
+                  !$v.areaOfScientificInterest.required,
               }"
             ></textarea>
             <span
               class="invalid-text"
-              v-if="$v.areaOfScientificInterest.$dirty && !$v.areaOfScientificInterest.required"
-            >This field is required</span>
+              v-if="
+                $v.areaOfScientificInterest.$dirty &&
+                  !$v.areaOfScientificInterest.required
+              "
+              >This field is required</span
+            >
           </div>
 
           <div class="input-field">
@@ -212,14 +248,14 @@
               multiple
               @change="onImageUpload()"
               :class="{
-              invalid:
-                ($v.imageSrc.$dirty && !$v.imageSrc.required)
+                invalid: $v.imageSrc.$dirty && !$v.imageSrc.required,
               }"
             />
             <span
               class="invalid-text"
               v-if="$v.imageSrc.$dirty && !$v.imageSrc.required"
-            >This field is required</span>
+              >This field is required</span
+            >
           </div>
 
           <div>
@@ -235,10 +271,16 @@
           />
 
           <button type="submit" class="btn-signup">Sign Up</button>
-          <p class="typo__p" v-if="submitStatus === 'OK'">Registration completed successfully</p>
-          <p class="typo__p" v-if="submitStatus === 'ERROR'">Please fill the form correctly.</p>
+          <p class="typo__p" v-if="submitStatus === 'OK'">
+            Registration completed successfully
+          </p>
+          <p class="typo__p" v-if="submitStatus === 'ERROR'">
+            Please fill the form correctly.
+          </p>
           <p class="typo__p" v-if="submitStatus === 'PENDING'">Sending...</p>
-          <p class="typo__p" v-if="submitStatus === 'SERVER-ERROR'">{{ error }}</p>
+          <p class="typo__p" v-if="submitStatus === 'SERVER-ERROR'">
+            {{ error }}
+          </p>
         </form>
       </div>
     </div>
@@ -246,6 +288,7 @@
 </template>
 
 <script>
+import PhoneMaskInput from "vue-phone-mask-input";
 import axios from "axios";
 import { required, email, numeric } from "vuelidate/lib/validators";
 import VueRecaptcha from "vue-recaptcha";
@@ -267,42 +310,40 @@ export default {
     file: null,
     submitStatus: null,
     error: null,
-    sitekey: process.env.VUE_APP_RECAPTCHA_SITE_KEY
+    sitekey: process.env.VUE_APP_RECAPTCHA_SITE_KEY,
   }),
 
   validations: {
     firstName: {
-      required
+      required,
     },
     lastName: {
-      required
+      required,
     },
     middleName: {
-      required
+      required,
     },
     country: {
-      required
+      required,
     },
     organization: {
-      required
+      required,
     },
     authors: {
-      required
+      required,
     },
     areaOfScientificInterest: {
-      required
+      required,
     },
     imageSrc: {
-      required
+      required,
     },
     email: {
       required,
-      email
+      email,
     },
-    phone: {
-      numeric
-    },
-    informationAboutYourself: {}
+    phone: {},
+    informationAboutYourself: {},
   },
 
   methods: {
@@ -353,14 +394,14 @@ export default {
           this.informationAboutYourself.length >= 1
             ? this.informationAboutYourself
             : null,
-        recaptchaToken: recaptchaToken
+        recaptchaToken: recaptchaToken,
       });
 
       axios
         .post(`${process.env.VUE_APP_LOCALHOST}/api/participants`, formData, {
-          headers: { "Content-Type": "application/json; charset=utf-8" }
+          headers: { "Content-Type": "application/json; charset=utf-8" },
         })
-        .then(response => {
+        .then((response) => {
           this.submitStatus = "OK";
 
           this.firstName = "";
@@ -376,7 +417,7 @@ export default {
           this.informationAboutYourself = "";
           this.showPreview = false;
         })
-        .catch(e => {
+        .catch((e) => {
           this.error = e.response.data.error;
           this.submitStatus = "SERVER-ERROR";
         });
@@ -384,11 +425,11 @@ export default {
 
     onCaptchaExpired() {
       this.$refs.recaptcha.reset();
-    }
+    },
   },
   components: {
-    VueRecaptcha
-  }
+    VueRecaptcha,
+  },
 };
 </script>
 
@@ -459,7 +500,8 @@ export default {
     transition: opacity 0.5s ease, transform 0.5s ease;
 
     input,
-    textarea {
+    textarea,
+    .input {
       color: #ffffff;
       font-size: 13px;
     }
@@ -501,6 +543,7 @@ export default {
     }
 
     input:focus,
+    .input:focus,
     textarea:focus {
       background: rgba(255, 255, 255, 0.3);
       border: none;
@@ -564,5 +607,17 @@ export default {
       height: auto;
     }
   }
+}
+
+.wrraper-example {
+  display: flex;
+
+  span {
+    margin-left: 10px !important;
+  }
+}
+
+input::placeholder {
+  color: rgba(#fff, 0.7);
 }
 </style>
