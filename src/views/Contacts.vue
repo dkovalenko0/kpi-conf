@@ -25,10 +25,6 @@
               class="display-block"
             >Phones: +380 (44) 204-94-10, +380 (50) 815-30-34</span>
           </p>
-          <p class="contacts__text contacts__text--gray">
-            *Please note that our contact E-mail is for questions/quotes only. Please do not submit your papers
-            to this E-mail.
-          </p>
         </div>
       </div>
     </div>
