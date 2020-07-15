@@ -72,7 +72,6 @@
             <li>D.Sc. Tamas Kiss, UK</li>
             <li>Prof. Igor Kovalenko, Ukraine</li>
             <li>Prof. Roman Kuc, USA</li>
-            <li>Prof. Oleksandr Letichevsky, Ukraine</li>
             <li>D.Sc. Oleg Lodygensky, France</li>
             <li>D.Sc. Robert Lovas, Hungary</li>
             <li>Prof. Sergei Lyshevski, USA</li>
