@@ -75,12 +75,12 @@
           </p>-->
 
           <p class="conditions__text">
-            Paper submission is organized through Оrganizing Committee`s E-mail:
+            Paper submission via
             <a
               class="callforpapers__mail"
-              href="mailto:hpc.ua.conf@gmail.com ?cc=hpc.ua.conf@gmail.com "
+              href="https://docs.google.com/forms/d/e/1FAIpQLSeJLI9uXVu-5CQuQSuPcEBfQODgcHDKUdT5pP5pqXD9rcKuUg/viewform?pli=1"
               target="_blank"
-            >hpc.ua.conf@gmail.com</a>
+            >Paper Submission Form</a>
           </p>
         </div>
 
