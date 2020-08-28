@@ -49,6 +49,11 @@
                       >https://www.kpi.ua/en/node/2756</a>
                     </span>
                   </li>
+
+                  <li>
+                    Important information
+                    <span>In connection with the continuation of the Covid epidemic, the organizing committee of Six International Conference on High Performance Computing (HPC-UA 2020) is looking at possible online format of the conference.</span>
+                  </li>
                 </ul>
               </div>
               <iframe

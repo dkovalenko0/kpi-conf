@@ -6,7 +6,7 @@
           <div class="banner__pretitle">6rd International Conference</div>
           <div class="banner__title">High Performance Computing</div>
           <div class="banner__posttitle">HPC-UA 2020</div>
-          <div class="banner__date">April 27 - 28, 2020 Kyiv / Ukraine</div>
+          <div class="banner__date">November 06 - 07, 2020 Kyiv / Ukraine</div>
         </div>
       </div>
       <!-- /.home__banner-->
@@ -48,7 +48,7 @@
               V.M. Glushkov Institute of Cybernetics of NAS of Ukraine, NTUU "Igor Sikorsky Kyiv Polytechnic
               Institute"
               and GlobalLogic Ukraine are pleased to announce the Six International Conference on High Performance
-              Computing (HPC-UA 2020) being held in Kyiv, Ukraine, April, 2020. We are doing our best to increase
+              Computing (HPC-UA 2020) being held in Kyiv, Ukraine, November, 2020. We are doing our best to increase
               the
               success of previous HPC-UA conferences and make it the largest HPC event in Ukraine.
             </p>
@@ -74,7 +74,8 @@
               <div class="dates__list">
                 <ul>
                   <li class="dates__item">
-                    <span class="dates__text dates__text--bold">August 23, 2020</span>
+                    <span class="dates__text dates__text--bold crossed">August 23, 2020</span>
+                    <span class="dates__text dates__text--bold red">September 15, 2020</span>
                     <span class="dates__text">Paper submission</span>
                   </li>
 
@@ -110,24 +111,40 @@
               <div class="rightside__title">Paper Submission</div>
               <div class="submission__text">
                 Paper Submission via
-                Оrganizing Committee`s E-mail
-                :
                 <a
                   class="callforpapers__mail"
-                  href="mailto:hpc.ua.conf@gmail.com?cc=hpc.ua.conf@gmail.com"
+                  href="https://docs.google.com/forms/d/e/1FAIpQLSeJLI9uXVu-5CQuQSuPcEBfQODgcHDKUdT5pP5pqXD9rcKuUg/viewform?pli=1"
                   target="_blank"
-                >hpc.ua.conf@gmail.com</a>
+                >Paper Submission Form</a>
               </div>
             </div>
 
             <div class="rightside__submission rightside__block">
-              <div class="rightside__title">Registration form</div>
+              <div class="rightside__title">Registration form for paper authors</div>
               <div class="submission__text">
                 All of the authors of each presented paper must be registered as participants of the conference via conference
                 <router-link
                   class="callforpapers__mail"
                   to="/registration"
-                >Web site registration form</router-link>
+                >Web site registration form.</router-link>
+                <span class="red">The form will be activate soon</span>
+              </div>
+            </div>
+
+            <div class="rightside__important-info rightside__block">
+              <div class="rightside__title">Important information</div>
+              <div class="submission__text">
+                In connection with the continuation of the Covid epidemic the Six International Conference on High Performance Computing (HPC-UA 2020) will go virtual.
+                <div class="important">
+                  <span>
+                    If you want to participate in the online conference as a guest, please fill out the
+                    <a
+                      class="callforpapers__mail"
+                      href="https://forms.gle/Wb2935Xkik32Xs3W6"
+                      target="_blank"
+                    >registration form for the guests of the online conference,</a> so we will be able to send you invitations.
+                  </span>
+                </div>
               </div>
             </div>
           </aside>
@@ -212,12 +229,20 @@
 
 <script>
 export default {
-  name: "Home"
+  name: "Home",
 };
 </script>
 
 
 <style lang="scss">
+.crossed {
+  text-decoration: line-through;
+}
+
+.red {
+  color: red;
+}
+
 .home__banner {
   margin-bottom: 55px;
   width: 100%;

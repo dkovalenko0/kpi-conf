@@ -5,7 +5,7 @@
         <div class="title--gray">CALL FOR PAPERS</div>
         <div class="callforpapers__inner border-top">
           <h1 class="title">Information mail</h1>
-          <a href="assets/img/Information_mail_HPC.pdf" class="information-mail" download>
+          <a href="InformationMailHPC.pdf" class="information-mail" download>
             Download the PDF
             version of HPC-UA 2020 Call For Papers
           </a>

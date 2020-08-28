@@ -9,12 +9,7 @@
             </li>
           </ul>
         </div>
-        <form
-          class="form-signin"
-          method="post"
-          name="form"
-          @submit.prevent="submitHandler"
-        >
+        <form class="form-signin" method="post" name="form" @submit.prevent="submitHandler">
           <div class="input-field">
             <label for="name_of_participant">First name: *</label>
             <input
@@ -29,8 +24,7 @@
             <span
               class="invalid-text"
               v-if="$v.firstName.$dirty && !$v.firstName.required"
-              >This field is required</span
-            >
+            >This field is required</span>
           </div>
 
           <div class="input-field">
@@ -47,8 +41,7 @@
             <span
               class="invalid-text"
               v-if="$v.lastName.$dirty && !$v.lastName.required"
-              >This field is required</span
-            >
+            >This field is required</span>
           </div>
 
           <div class="input-field">
@@ -65,8 +58,7 @@
             <span
               class="invalid-text"
               v-if="$v.middleName.$dirty && !$v.middleName.required"
-              >This field is required</span
-            >
+            >This field is required</span>
           </div>
 
           <div class="input-field">
@@ -85,13 +77,11 @@
             <span
               class="invalid-text"
               v-if="$v.email.$dirty && !$v.email.required"
-              >This field is required</span
-            >
+            >This field is required</span>
             <span
               class="invalid-text"
               v-else-if="$v.email.$dirty && !$v.email.email"
-              >Enter correct email</span
-            >
+            >Enter correct email</span>
           </div>
 
           <!-- <div class="input-field">
@@ -108,10 +98,10 @@
             <span class="invalid-text" v-if="$v.phone.$dirty"
               >Enter correct phone</span
             >
-          </div> -->
+          </div>-->
 
           <div class="input-field">
-            <label for="phone">Phone:</label>
+            <label for="phone">Phone: *</label>
             <phone-mask-input
               placeholder="start with your country code"
               v-model="phone"
@@ -121,12 +111,14 @@
               inputClass="form-styling"
               flagClass="flag-example"
               :class="{
-                invalid: $v.phone.$dirty,
+                invalid: $v.phone.$dirty && !$v.phone.required,
               }"
             />
-            <span class="invalid-text" v-if="$v.phone.$dirty"
-              >Enter correct phone</span
-            >
+            <span
+              class="invalid-text"
+              v-if="$v.phone.$dirty && !$v.phone.required"
+            >This field is required</span>
+            <!-- <span class="invalid-text" v-if="$v.phone.$dirty">Enter correct phone</span> -->
           </div>
 
           <div class="input-field">
@@ -143,14 +135,11 @@
             <span
               class="invalid-text"
               v-if="$v.organization.$dirty && !$v.organization.required"
-              >This field is required</span
-            >
+            >This field is required</span>
           </div>
 
           <div class="input-field">
-            <label for="authors_of_conference_paper"
-              >Authors of conference paper: *</label
-            >
+            <label for="authors_of_conference_paper">Authors of conference paper: *</label>
             <input
               class="form-styling"
               type="text"
@@ -163,8 +152,7 @@
             <span
               class="invalid-text"
               v-if="$v.authors.$dirty && !$v.authors.required"
-              >This field is required</span
-            >
+            >This field is required</span>
           </div>
 
           <div class="input-field">
@@ -176,9 +164,7 @@
                 invalid: $v.country.$dirty && !$v.country.required,
               }"
             >
-              <option value="Choose country" selected disabled
-                >Choose country</option
-              >
+              <option value="Choose country" selected disabled>Choose country</option>
               <option value="Ukraine">Ukraine</option>
               <option value="Germany">Germany</option>
               <option value="France">France</option>
@@ -192,14 +178,11 @@
             <span
               class="invalid-text"
               v-if="$v.country.$dirty && !$v.country.required"
-              >This field is required</span
-            >
+            >This field is required</span>
           </div>
 
           <div class="input-field">
-            <label for="info_about_yourself"
-              >Brief information about yourself:</label
-            >
+            <label for="info_about_yourself">Brief information about yourself:</label>
             <textarea
               name="info_about_yourself"
               id
@@ -210,9 +193,7 @@
           </div>
 
           <div class="input-field">
-            <label for="scientific_interest"
-              >Area of scientific interest: *</label
-            >
+            <label for="scientific_interest">Area of scientific interest: *</label>
             <textarea
               name="scientific_interest"
               id
@@ -231,12 +212,11 @@
                 $v.areaOfScientificInterest.$dirty &&
                   !$v.areaOfScientificInterest.required
               "
-              >This field is required</span
-            >
+            >This field is required</span>
           </div>
 
           <div class="input-field">
-            <label for="photo">Photo: *</label>
+            <label for="photo">Photo:</label>
             <label for="photo" class="label_photo">Choose your photo</label>
             <input
               type="file"
@@ -247,15 +227,7 @@
               name="photo"
               multiple
               @change="onImageUpload()"
-              :class="{
-                invalid: $v.imageSrc.$dirty && !$v.imageSrc.required,
-              }"
             />
-            <span
-              class="invalid-text"
-              v-if="$v.imageSrc.$dirty && !$v.imageSrc.required"
-              >This field is required</span
-            >
           </div>
 
           <div>
@@ -271,16 +243,10 @@
           />
 
           <button type="submit" class="btn-signup">Sign Up</button>
-          <p class="typo__p" v-if="submitStatus === 'OK'">
-            Registration completed successfully
-          </p>
-          <p class="typo__p" v-if="submitStatus === 'ERROR'">
-            Please fill the form correctly.
-          </p>
+          <p class="typo__p" v-if="submitStatus === 'OK'">Registration completed successfully</p>
+          <p class="typo__p" v-if="submitStatus === 'ERROR'">Please fill the form correctly.</p>
           <p class="typo__p" v-if="submitStatus === 'PENDING'">Sending...</p>
-          <p class="typo__p" v-if="submitStatus === 'SERVER-ERROR'">
-            {{ error }}
-          </p>
+          <p class="typo__p" v-if="submitStatus === 'SERVER-ERROR'">{{ error }}</p>
         </form>
       </div>
     </div>
@@ -335,14 +301,14 @@ export default {
     areaOfScientificInterest: {
       required,
     },
-    imageSrc: {
-      required,
-    },
+    imageSrc: {},
     email: {
       required,
       email,
     },
-    phone: {},
+    phone: {
+      required,
+    },
     informationAboutYourself: {},
   },
 
@@ -352,7 +318,7 @@ export default {
       let reader = new FileReader();
       reader.addEventListener(
         "load",
-        function() {
+        function () {
           this.showPreview = true;
           this.imageSrc = reader.result;
         }.bind(this),
@@ -387,9 +353,9 @@ export default {
         organization: this.organization,
         authors: this.authors,
         areaOfScientificInterest: this.areaOfScientificInterest,
-        photo: this.imageSrc,
+        photo: this.imageSrc || null,
         email: this.email,
-        phone: this.phone.length >= 1 ? this.phone : null,
+        phone: this.phone,
         informationAboutYourself:
           this.informationAboutYourself.length >= 1
             ? this.informationAboutYourself

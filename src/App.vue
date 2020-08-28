@@ -13,11 +13,11 @@ export default {
   computed: {
     layout() {
       return this.$route.meta.layout + "-layout";
-    }
+    },
   },
   components: {
-    MainLayout
-  }
+    MainLayout,
+  },
 };
 </script>
 
@@ -133,5 +133,19 @@ li {
 
 .pad-20 {
   padding-top: 20px;
+}
+
+.important {
+  display: flex;
+  align-items: center;
+  font-weight: 700;
+  font-size: 14px;
+  padding: 10px 0;
+
+  &::before {
+    content: "!";
+    font-size: 100px;
+    color: coral;
+  }
 }
 </style>
