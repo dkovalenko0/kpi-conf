@@ -2,14 +2,23 @@
   <section class="registration">
     <div class="container">
       <div class="frame">
-        <div class="form__nav">
+        <div class="form__nav" v-if="!isHidden">
           <ul class="form__nav-links">
             <li class="signup-active">
               <a class="btn">Participation request:</a>
             </li>
           </ul>
         </div>
-        <form class="form-signin" method="post" name="form" @submit.prevent="submitHandler">
+        <div class="success" v-if="isHidden">
+          <img src="../assets/img/success.png" alt="success" class="img-success" />
+        </div>
+        <form
+          class="form-signin"
+          method="post"
+          name="form"
+          @submit.prevent="submitHandler"
+          v-if="!isHidden"
+        >
           <div class="input-field">
             <label for="name_of_participant">First name: *</label>
             <input
@@ -277,6 +286,7 @@ export default {
     submitStatus: null,
     error: null,
     sitekey: process.env.VUE_APP_RECAPTCHA_SITE_KEY,
+    isHidden: false,
   }),
 
   validations: {
@@ -379,6 +389,7 @@ export default {
           this.phone = "";
           this.informationAboutYourself = "";
           this.showPreview = false;
+          this.isHidden = true;
         })
         .catch((e) => {
           this.error = e.response.data.error;
@@ -403,6 +414,16 @@ export default {
 
 .red {
   color: red;
+}
+
+.success {
+  display: flex;
+  justify-content: center;
+}
+
+.img-success {
+  width: 100px;
+  height: 100px;
 }
 
 .invalid-text {
