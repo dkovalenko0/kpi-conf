@@ -244,9 +244,9 @@
 
           <button type="submit" class="btn-signup">Sign Up</button>
           <p class="typo__p" v-if="submitStatus === 'OK'">Registration completed successfully</p>
-          <p class="typo__p" v-if="submitStatus === 'ERROR'">Please fill the form correctly.</p>
+          <p class="typo__p red" v-if="submitStatus === 'ERROR'">Please fill the form correctly.</p>
           <p class="typo__p" v-if="submitStatus === 'PENDING'">Sending...</p>
-          <p class="typo__p" v-if="submitStatus === 'SERVER-ERROR'">{{ error }}</p>
+          <p class="typo__p red" v-if="submitStatus === 'SERVER-ERROR'">{{ error }}</p>
         </form>
       </div>
     </div>
@@ -356,10 +356,7 @@ export default {
         photo: this.imageSrc || null,
         email: this.email,
         phone: this.phone,
-        informationAboutYourself:
-          this.informationAboutYourself.length >= 1
-            ? this.informationAboutYourself
-            : null,
+        informationAboutYourself: this.informationAboutYourself || null,
         recaptchaToken: recaptchaToken,
       });
 
