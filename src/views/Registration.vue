@@ -252,11 +252,13 @@
           />
 
           <button type="submit" class="btn-signup">Sign Up</button>
+        </form>
+        <div class="registration-results">
           <p class="typo__p" v-if="submitStatus === 'OK'">Registration completed successfully</p>
           <p class="typo__p red" v-if="submitStatus === 'ERROR'">Please fill the form correctly.</p>
           <p class="typo__p" v-if="submitStatus === 'PENDING'">Sending...</p>
           <p class="typo__p red" v-if="submitStatus === 'SERVER-ERROR'">{{ error }}</p>
-        </form>
+        </div>
       </div>
     </div>
   </section>
