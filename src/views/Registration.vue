@@ -401,6 +401,10 @@ export default {
   border: 1px solid red !important;
 }
 
+.red {
+  color: red;
+}
+
 .invalid-text {
   display: block;
   margin-top: 10px;
@@ -475,6 +479,7 @@ export default {
 
     .form-styling,
     select {
+      color: #ffffff;
       outline: none;
       width: 100%;
       height: 35px;
@@ -482,6 +487,10 @@ export default {
       border: none;
       border-radius: 20px;
       background: rgba(255, 255, 255, 0.2);
+    }
+
+    option {
+      color: #000;
     }
 
     textarea {
