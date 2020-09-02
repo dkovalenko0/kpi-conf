@@ -75,7 +75,7 @@
                 <ul>
                   <li class="dates__item">
                     <span class="dates__text dates__text--bold crossed">August 23, 2020</span>
-                    <span class="dates__text dates__text--bold red">September 15, 2020</span>
+                    <span class="dates__text dates__text--bold red">September 30, 2020</span>
                     <span class="dates__text">Paper submission</span>
                   </li>
 
@@ -127,7 +127,6 @@
                   class="callforpapers__mail"
                   to="/registration"
                 >Web site registration form.</router-link>
-                <span class="red">The form will be activate soon</span>
               </div>
             </div>
 
