@@ -148,7 +148,7 @@
           </div>
 
           <div class="input-field">
-            <label for="authors_of_conference_paper">Authors of conference paper: *</label>
+            <label for="authors_of_conference_paper">TITLE OF CONFERENCE PAPER: *</label>
             <input
               class="form-styling"
               type="text"
