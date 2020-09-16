@@ -74,28 +74,18 @@
               <div class="dates__list">
                 <ul>
                   <li class="dates__item">
-                    <span class="dates__text dates__text--bold crossed">August 23, 2020</span>
-                    <span class="dates__text dates__text--bold red">September 30, 2020</span>
+                    <!-- <span class="dates__text dates__text--bold crossed">August 23, 2020</span> -->
+                    <span class="dates__text dates__text--bold">September 30, 2020</span>
                     <span class="dates__text">Paper submission</span>
                   </li>
 
                   <li class="dates__item">
-                    <span class="dates__text dates__text--bold">August 28, 2020</span>
-                    <span class="dates__text">Notification of paper acceptance</span>
-                  </li>
-
-                  <li class="dates__item">
-                    <span class="dates__text dates__text--bold">September 13, 2020</span>
-                    <span class="dates__text">Response of Reviewers</span>
-                  </li>
-
-                  <li class="dates__item">
-                    <span class="dates__text dates__text--bold">September 27, 2020</span>
+                    <span class="dates__text dates__text--bold">October 10, 2020</span>
                     <span class="dates__text">Final Paper Submission</span>
                   </li>
 
                   <li class="dates__item">
-                    <span class="dates__text dates__text--bold">September 30, 2020</span>
+                    <span class="dates__text dates__text--bold">October 18, 2020</span>
                     <span class="dates__text">Registration and full payment</span>
                   </li>
 

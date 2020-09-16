@@ -15,24 +15,16 @@
           <ul class="callforpapers__dates-list">
             <li>
               Paper submission due:
-              <span class="bold">August 23, 2020</span>
-            </li>
-            <li>
-              Notification of paper acceptance:
-              <span class="bold">August 28, 2020</span>
-            </li>
-            <li>
-              Response of Reviewers:
-              <span class="bold">September 13, 2020</span>
+              <span class="bold">September 30, 2020</span>
             </li>
             <li>
               Final Paper Submission:
-              <span class="bold">September 27, 2020</span>
+              <span class="bold">October 10, 2020</span>
             </li>
 
             <li>
               Registration and full payment due:
-              <span class="bold">September 30, 2020</span>
+              <span class="bold">October 18, 2020</span>
             </li>
 
             <li>
