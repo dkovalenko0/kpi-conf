@@ -10,7 +10,11 @@
           </ul>
         </div>
         <div class="success" v-if="isHidden">
-          <img src="../assets/img/success.png" alt="success" class="img-success" />
+          <img
+            src="../assets/img/success.png"
+            alt="success"
+            class="img-success"
+          />
         </div>
         <form
           class="form-signin"
@@ -33,7 +37,8 @@
             <span
               class="invalid-text"
               v-if="$v.firstName.$dirty && !$v.firstName.required"
-            >This field is required</span>
+              >This field is required</span
+            >
           </div>
 
           <div class="input-field">
@@ -50,7 +55,8 @@
             <span
               class="invalid-text"
               v-if="$v.lastName.$dirty && !$v.lastName.required"
-            >This field is required</span>
+              >This field is required</span
+            >
           </div>
 
           <div class="input-field">
@@ -67,7 +73,8 @@
             <span
               class="invalid-text"
               v-if="$v.middleName.$dirty && !$v.middleName.required"
-            >This field is required</span>
+              >This field is required</span
+            >
           </div>
 
           <div class="input-field">
@@ -86,11 +93,13 @@
             <span
               class="invalid-text"
               v-if="$v.email.$dirty && !$v.email.required"
-            >This field is required</span>
+              >This field is required</span
+            >
             <span
               class="invalid-text"
               v-else-if="$v.email.$dirty && !$v.email.email"
-            >Enter correct email</span>
+              >Enter correct email</span
+            >
           </div>
 
           <!-- <div class="input-field">
@@ -126,7 +135,8 @@
             <span
               class="invalid-text"
               v-if="$v.phone.$dirty && !$v.phone.required"
-            >This field is required</span>
+              >This field is required</span
+            >
             <!-- <span class="invalid-text" v-if="$v.phone.$dirty">Enter correct phone</span> -->
           </div>
 
@@ -144,11 +154,14 @@
             <span
               class="invalid-text"
               v-if="$v.organization.$dirty && !$v.organization.required"
-            >This field is required</span>
+              >This field is required</span
+            >
           </div>
 
           <div class="input-field">
-            <label for="authors_of_conference_paper">TITLE OF CONFERENCE PAPER: *</label>
+            <label for="authors_of_conference_paper"
+              >TITLE OF CONFERENCE PAPER: *</label
+            >
             <input
               class="form-styling"
               type="text"
@@ -161,11 +174,38 @@
             <span
               class="invalid-text"
               v-if="$v.authors.$dirty && !$v.authors.required"
-            >This field is required</span>
+              >This field is required</span
+            >
           </div>
 
           <div class="input-field">
+            <!-- <div class="overlay" @click="showFilteredCountries = false"></div> -->
             <label for="country">Country: *</label>
+            <input
+              class="form-styling"
+              type="text"
+              name="country"
+              v-model="country"
+              autocomplete="off"
+              @focus="showFilteredCountries = true"
+              :class="{
+                invalid: $v.country.$dirty && !$v.country.required,
+              }"
+            />
+
+            <div v-if="filteredCountries && showFilteredCountries">
+              <ul class="filtered-countries">
+                <li
+                  v-for="filteredCountry in filteredCountries"
+                  :key="filteredCountry"
+                  @click="setCountry(filteredCountry)"
+                >
+                  {{ filteredCountry }}
+                </li>
+              </ul>
+            </div>
+
+            <!---
             <select
               name="country"
               v-model="country"
@@ -178,20 +218,25 @@
               <option value="Germany">Germany</option>
               <option value="France">France</option>
               <option value="Bulgaria">Bulgaria</option>
+              <option value="Belarus">Belarus</option>
               <option value="Lithuania">Lithuania</option>
               <option value="Europe">Europe</option>
               <option value="Ireland">Ireland</option>
               <option value="United Kingdom">United Kingdom</option>
               <option value="USA">USA</option>
-            </select>
+              <option value="another-country">Another country</option>
+            </select> -->
             <span
               class="invalid-text"
               v-if="$v.country.$dirty && !$v.country.required"
-            >This field is required</span>
+              >This field is required</span
+            >
           </div>
 
           <div class="input-field">
-            <label for="info_about_yourself">Brief information about yourself:</label>
+            <label for="info_about_yourself"
+              >Brief information about yourself:</label
+            >
             <textarea
               name="info_about_yourself"
               id
@@ -202,7 +247,9 @@
           </div>
 
           <div class="input-field">
-            <label for="scientific_interest">Area of scientific interest: *</label>
+            <label for="scientific_interest"
+              >Area of scientific interest: *</label
+            >
             <textarea
               name="scientific_interest"
               id
@@ -221,7 +268,8 @@
                 $v.areaOfScientificInterest.$dirty &&
                   !$v.areaOfScientificInterest.required
               "
-            >This field is required</span>
+              >This field is required</span
+            >
           </div>
 
           <div class="input-field">
@@ -254,10 +302,16 @@
           <button type="submit" class="btn-signup">Sign Up</button>
         </form>
         <div class="registration-results">
-          <p class="typo__p" v-if="submitStatus === 'OK'">Registration completed successfully</p>
-          <p class="typo__p red" v-if="submitStatus === 'ERROR'">Please fill the form correctly.</p>
+          <p class="typo__p" v-if="submitStatus === 'OK'">
+            Registration completed successfully
+          </p>
+          <p class="typo__p red" v-if="submitStatus === 'ERROR'">
+            Please fill the form correctly.
+          </p>
           <p class="typo__p" v-if="submitStatus === 'PENDING'">Sending...</p>
-          <p class="typo__p red" v-if="submitStatus === 'SERVER-ERROR'">{{ error }}</p>
+          <p class="typo__p red" v-if="submitStatus === 'SERVER-ERROR'">
+            {{ error }}
+          </p>
         </div>
       </div>
     </div>
@@ -289,6 +343,207 @@ export default {
     error: null,
     sitekey: process.env.VUE_APP_RECAPTCHA_SITE_KEY,
     isHidden: false,
+    showFilteredCountries: false,
+    filteredCountries: [],
+    countries: [
+      "Afghanistan",
+      "Albania",
+      "Algeria",
+      "Andorra",
+      "Angola",
+      "Antigua & Barbuda",
+      "Argentina",
+      "Armenia",
+      "Australia",
+      "Austria",
+      "Azerbaijan",
+      "Bahamas",
+      "Bahrain",
+      "Bangladesh",
+      "Barbados",
+      "Belarus",
+      "Belgium",
+      "Belize",
+      "Benin",
+      "Bhutan",
+      "Bolivia",
+      "Bosnia & Herzegovina",
+      "Botswana",
+      "Brazil",
+      "Brunei",
+      "Bulgaria",
+      "Burkina Faso",
+      "Burundi",
+      "Cambodia",
+      "Cameroon",
+      "Canada",
+      "Cape Verde",
+      "Central African Republic",
+      "Chad",
+      "Chile",
+      "China",
+      "Colombia",
+      "Comoros",
+      "Congo",
+      "Congo Democratic Republic",
+      "Costa Rica",
+      "Cote D'Ivoire",
+      "Croatia",
+      "Cuba",
+      "Cyprus",
+      "Czech Republic",
+      "Denmark",
+      "Djibouti",
+      "Dominica",
+      "Dominican Republic",
+      "East Timor",
+      "Ecuador",
+      "Egypt",
+      "El Salvador",
+      "Equatorial Guinea",
+      "Eritrea",
+      "Estonia",
+      "Ethiopia",
+      "Fiji",
+      "Finland",
+      "France",
+      "Gabon",
+      "Gambia",
+      "Georgia",
+      "Germany",
+      "Ghana",
+      "Greece",
+      "Grenada",
+      "Guatemala",
+      "Guinea",
+      "Guinea-Bissau",
+      "Guyana",
+      "Haiti",
+      "Honduras",
+      "Hungary",
+      "Iceland",
+      "India",
+      "Indonesia",
+      "Iran",
+      "Iraq",
+      "Ireland",
+      "Israel",
+      "Italy",
+      "Jamaica",
+      "Japan",
+      "Jordan",
+      "Kazakhstan",
+      "Kenya",
+      "Kiribati",
+      "Korea North",
+      "Korea South",
+      "Kosovo",
+      "Kuwait",
+      "Kyrgyzstan",
+      "Laos",
+      "Latvia",
+      "Lebanon",
+      "Lesotho",
+      "Liberia",
+      "Libya",
+      "Liechtenstein",
+      "Lithuania",
+      "Luxembourg",
+      "Macedonia",
+      "Madagascar",
+      "Malawi",
+      "Malaysia",
+      "Maldives",
+      "Mali",
+      "Malta",
+      "Marshall Islands",
+      "Mauritania",
+      "Mauritius",
+      "Mexico",
+      "Micronesia",
+      "Moldova",
+      "Monaco",
+      "Mongolia",
+      "Montenegro",
+      "Morocco",
+      "Mozambique",
+      "Myanmar (Burma)",
+      "Namibia",
+      "Nauru",
+      "Nepal",
+      "New Zealand",
+      "Nicaragua",
+      "Niger",
+      "Nigeria",
+      "Norway",
+      "Oman",
+      "Pakistan",
+      "Palau",
+      "Palestinian State*",
+      "Panama",
+      "Papua New Guinea",
+      "Paraguay",
+      "Peru",
+      "Poland",
+      "Portugal",
+      "Qatar",
+      "Romania",
+      "Russia",
+      "Rwanda",
+      "Samoa",
+      "San Marino",
+      "Sao Tome & Principe",
+      "Saudi Arabia",
+      "Senegal",
+      "Serbia",
+      "Seychelles",
+      "Sierra Leone",
+      "Singapore",
+      "Slovakia",
+      "Slovenia",
+      "Solomon Islands",
+      "Somalia",
+      "South Africa",
+      "South Sudan",
+      "Spain",
+      "Sri Lanka",
+      "St. Kitts & Nevis",
+      "St. Lucia",
+      "St. Vincent & The Grenadines",
+      "Sudan",
+      "Suriname",
+      "Swaziland",
+      "Sweden",
+      "Switzerland",
+      "Syria",
+      "Taiwan",
+      "Tajikistan",
+      "Tanzania",
+      "Thailand",
+      "The Netherlands",
+      "The Philippines",
+      "Togo",
+      "Tonga",
+      "Trinidad & Tobago",
+      "Tunisia",
+      "Turkey",
+      "Turkmenistan",
+      "Tuvalu",
+      "Uganda",
+      "Ukraine",
+      "United Arab Emirates",
+      "United Kingdom",
+      "United States Of America",
+      "Uruguay",
+      "Uzbekistan",
+      "Vanuatu",
+      "Vatican City (Holy See)",
+      "Venezuela",
+      "Vietnam",
+      "Yemen",
+      "Zambia",
+      "Zimbabwe",
+    ],
   }),
 
   validations: {
@@ -324,13 +579,37 @@ export default {
     informationAboutYourself: {},
   },
 
+  mounted() {
+    this.filteredCountries = this.countries;
+  },
+
+  watch: {
+    country() {
+      this.filterCountries();
+    },
+  },
+
   methods: {
+    filterCountries() {
+      if (this.country == null) {
+        this.filteredCountries = this.countries;
+      }
+      this.filteredCountries = this.countries.filter((item) => {
+        return item.toLowerCase().startsWith(this.country.toLowerCase());
+      });
+    },
+
+    setCountry(country) {
+      this.country = country;
+      this.showFilteredCountries = false;
+    },
+
     async onImageUpload() {
       this.file = this.$refs.file.files[0];
       let reader = new FileReader();
       reader.addEventListener(
         "load",
-        function () {
+        function() {
           this.showPreview = true;
           this.imageSrc = reader.result;
         }.bind(this),
@@ -403,6 +682,7 @@ export default {
       this.$refs.recaptcha.reset();
     },
   },
+
   components: {
     VueRecaptcha,
   },
@@ -410,6 +690,28 @@ export default {
 </script>
 
 <style lang="scss">
+// .overlay {
+//   position: absolute;
+//   top: 0;
+//   bottom: 0;
+//   left: 0;
+//   right: 0;
+//   z-index: 0;
+// }
+
+.filtered-countries {
+  margin-top: 20px;
+
+  li {
+    background-color: rgba(#fff, 0.2);
+    color: #fff;
+    padding: 5px 20px;
+    cursor: pointer;
+    border-bottom: 1px solid rgba(#000, 0.4);
+    border-radius: 10px;
+  }
+}
+
 .invalid {
   border: 1px solid red !important;
 }
