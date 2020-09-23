@@ -250,6 +250,11 @@
             >This field is required</span>
           </div>
 
+          <div class="input-field checkbox-container">
+            <input type="checkbox" id="isSpeaker" v-model="isSpeaker" />
+            <label for="isSpeaker">Are you speaker ?</label>
+          </div>
+
           <div class="input-field">
             <label for="photo">Photo:</label>
             <label for="photo" class="label_photo">Choose your photo</label>
@@ -311,6 +316,7 @@ export default {
     imageSrc: null,
     showPreview: false,
     file: null,
+    isSpeaker: false,
     submitStatus: null,
     error: null,
     sitekey: process.env.VUE_APP_RECAPTCHA_SITE_KEY,
@@ -620,6 +626,7 @@ export default {
         email: this.email,
         phone: this.phone,
         informationAboutYourself: this.informationAboutYourself || null,
+        isSpeaker: this.isSpeaker,
         recaptchaToken: recaptchaToken,
       });
 
@@ -641,7 +648,7 @@ export default {
           this.email = "";
           this.phone = "";
           this.informationAboutYourself = "";
-          this.showPreview = false;
+          (this.isSpeaker = false), (this.showPreview = false);
           this.isHidden = true;
         })
         .catch((e) => {
@@ -670,6 +677,14 @@ export default {
 //   right: 0;
 //   z-index: 0;
 // }
+
+.checkbox-container {
+  display: flex;
+
+  input {
+    cursor: pointer;
+  }
+}
 
 .filtered-countries {
   background-color: #fff;
@@ -830,12 +845,12 @@ export default {
       font-size: 13px;
       text-align: center;
       color: #ffffff;
-      padding: 8px 0;
-      width: 100%;
-      height: 35px;
+      padding: 15px 34px;
+      // width: 100%;
+      // height: 35px;
       border: none;
       outline: none;
-      border-radius: 20px;
+      border-radius: 15px;
       margin-top: 23px;
       background-color: #1059ff;
     }
@@ -850,10 +865,11 @@ export default {
     }
 
     .label_photo {
+      width: 230px;
       background: #006699;
       border: none;
       text-transform: none;
-      border-radius: 10px;
+      border-radius: 15px;
       color: #fff;
       font-size: 16px;
       cursor: pointer;
