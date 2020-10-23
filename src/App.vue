@@ -111,6 +111,11 @@ li {
 
   transition: all 0.2s linear;
 
+  @media (max-width: 530px) {
+    width: 100%;
+    margin-top: 10px;
+  }
+
   &:not(:last-child) {
     margin-right: 15px;
   }

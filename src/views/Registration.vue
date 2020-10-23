@@ -781,6 +781,10 @@ export default {
   overflow: hidden;
   transition: all 0.5s ease;
 
+  @media (max-width: 468px) {
+    width: 100%;
+  }
+
   .form__nav {
     width: 100%;
     padding: 0 0 30px 37px;
@@ -811,6 +815,10 @@ export default {
     padding-left: 37px;
     padding-right: 37px;
     transition: opacity 0.5s ease, transform 0.5s ease;
+
+    @media (max-width: 468px) {
+      width: 100%;
+    }
 
     input,
     textarea,

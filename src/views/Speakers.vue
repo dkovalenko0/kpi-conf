@@ -81,6 +81,10 @@ export default {
 
 .participants__list {
     margin: 50px;
+
+  @media (max-width: 768px) {
+    margin: 0;
+  }
 }
 
 .participants__item {
@@ -91,21 +95,41 @@ export default {
     background-color: #fafafa;
     box-shadow: 3px 0 49px 0 rgba(0, 0, 0, 0.16);
 
+    @media (max-width: 768px) {
+      flex-direction: column;
+    }
+
     img {
         align-self: flex-start;
         width: 150px;
         height: auto;
+
+      @media (max-width: 768px) {
+        width: 200px;
+      }
     }
 
     .participants__info {
         margin-left: 50px;
 
+      @media (max-width: 768px) {
+        margin-left: 0;
+        margin-top: 30px;
+      }
+
         .participants__name {
             font-size: 30px;
+            line-height: 130%;
         }
 
         .participants__info-about {
             margin-top: 30px;
+
+
+          @media (max-width: 768px) {
+            margin-left: 0;
+            margin-top: 10px;
+          }
         }
     }
 }

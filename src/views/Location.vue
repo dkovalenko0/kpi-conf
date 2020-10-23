@@ -437,22 +437,42 @@
 </template>
 
 <style lang="scss">
+
+iframe {
+  @media (max-width: 560px) {
+    width: 100% !important;
+  }
+}
+
+
 .location__info {
   padding: 30px 50px;
   width: 100%;
   min-height: 500px;
   background-color: #f0f0f0;
+
+  @media (max-width: 560px) {
+    padding: 30px 20px;
+  }
 }
 
 .location__info-top {
   display: flex;
   justify-content: space-between;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
 }
 
 .location__info-bot {
   margin-top: 20px;
   display: flex;
   justify-content: space-between;
+
+  @media (max-width: 1180px) {
+    flex-direction: column;
+  }
 }
 
 .info__map {
@@ -461,6 +481,10 @@
 
 .info__hotels {
   max-width: 415px;
+
+  @media (max-width: 1180px) {
+    margin-top: 30px;
+  }
 }
 
 .info__title--min {
@@ -507,6 +531,10 @@
 .location__descrption {
   padding: 30px 50px;
   background-color: #fff;
+
+  @media (max-width: 560px) {
+    padding: 30px 20px;
+  }
 }
 
 .descrption__visa {
@@ -530,5 +558,10 @@
 .sights__img {
   padding: 0 20px 20px 0;
   float: left;
+
+  @media (max-width: 560px) {
+    display: block;
+    float: none;
+  }
 }
 </style>
