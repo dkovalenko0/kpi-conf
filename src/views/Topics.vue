@@ -7,7 +7,7 @@
 
           <div class="topics__grid">
             <!-- Cloud Computing -->
-            <div class="topics__grid-block">
+            <div class="topics__grid-block topics__grid-reverse">
               <div class="cloud-computing__block">
                 <div class="cloud-computing__title topics__title">HPC</div>
                 <div class="topics__text">
@@ -87,7 +87,7 @@
             </div>
 
             <!-- Software and Applications-->
-            <div class="topics__grid-block">
+            <div class="topics__grid-block topics__grid-reverse">
               <div class="software__block">
                 <div class="software__title topics__title">Data Science</div>
                 <div class="topics__text">
@@ -191,6 +191,18 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: 30px;
+
+  @media (max-width: 768px) {
+    display: flex;
+    flex-wrap: wrap;
+
+  }
+}
+
+.topics__grid-reverse {
+  @media (max-width: 768px) {
+    flex-direction: column-reverse;
+  }
 }
 
 .topics__title {
