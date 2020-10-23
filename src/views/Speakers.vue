@@ -1,110 +1,112 @@
 <template>
-  <section class="participants">
+<section class="participants">
     <div class="container">
-      <div class="participants__content">
-        <div class="title__container">
-          <h2 class="title--gray">Participants</h2>
-        </div>
-
-        <div class="participants__list">
-          <div class="participants__item" v-for="item in participants" :key="item.id">
-            <!-- <img :src="item.photo || '../assets/img/person.png'" alt="photo" /> -->
-            <img :src="item.photo || require('../assets/img/person.png')" alt />
-            <div class="participants__info">
-              <h3 class="participants__name">{{item.name}}</h3>
-              <h4 class="participants__theme"></h4>
-              <p class="participants__info-about">{{item.informationAboutYourself}}</p>
+        <div class="participants__content">
+            <div class="title__container">
+                <h2 class="title--gray">Participants</h2>
             </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-</template>
 
+            <div class="participants__list">
+                <div class="participants__item" v-for="item in participants" :key="item.id">
+                    <!-- <img :src="item.photo || '../assets/img/person.png'" alt="photo" /> -->
+                    <img :src="item.photo || require('../assets/img/person.png')" alt />
+                    <div class="participants__info">
+                        <h3 class="participants__name">{{ item.name }}</h3>
+                        <h4 class="participants__theme"></h4>
+                        <p class="participants__info-about">
+                            {{ item.informationAboutYourself }}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+</template>
 
 <script>
 import axios from "axios";
 
 export default {
-  data() {
-    return {
-      participants: {},
-    };
-  },
+    data() {
+        return {
+            participants: {},
+        };
+    },
 
-  mounted() {
-    axios
-      .get(`${process.env.VUE_APP_LOCALHOST}/api/participants`, {
-        headers: {
-          "Access-Control-Allow-Origin": "*",
-        },
-      })
+    mounted() {
+        axios
+            .get(`${process.env.VUE_APP_LOCALHOST}/api/participants`, {
+                headers: {
+                    "Access-Control-Allow-Origin": "*",
+                },
+            })
 
-      .then((response) => (this.participants = response.data.data));
-    // .then((response) => console.log(response.data.data));
-  },
-  //   methods: {
-  //     getSpeakers() {
-  //       axios
-  //         .get(`${process.env.VUE_APP_LOCALHOST}/api/participants`, {
-  //           headers: { "Content-Type": "application/json; charset=utf-8" },
-  //         })
-  //         .then((response) => {
-  //           console.log(response);
-  //         })
-  //         .catch((e) => {
-  //           this.error = e.response.data.error;
-  //           this.submitStatus = "SERVER-ERROR";
-  //         });
-  //     },
-  //   },
+            .then((response) => (this.participants = response.data.data));
+        // .then((response) => console.log(response.data.data));
+    },
+    //   methods: {
+    //     getSpeakers() {
+    //       axios
+    //         .get(`${process.env.VUE_APP_LOCALHOST}/api/participants`, {
+    //           headers: { "Content-Type": "application/json; charset=utf-8" },
+    //         })
+    //         .then((response) => {
+    //           console.log(response);
+    //         })
+    //         .catch((e) => {
+    //           this.error = e.response.data.error;
+    //           this.submitStatus = "SERVER-ERROR";
+    //         });
+    //     },
+    //   },
 
-  //   created() {
-  //     this.getSpeakers();
-  //   },
+    //   created() {
+    //     this.getSpeakers();
+    //   },
 };
 </script>
 
-
 <style lang="scss">
 .participants__content {
-  padding: 40px 15px;
-  background-color: #fff;
-  color: #000;
+    padding: 40px 15px;
+    background-color: #fff;
+    color: #000;
 
-  .title__container {
-    display: flex;
-    justify-content: center;
-  }
+    .title__container {
+        display: flex;
+        justify-content: center;
+    }
 }
 
 .participants__list {
-  margin: 100px 50px 0;
+    margin: 50px;
 }
 
 .participants__item {
-  display: flex;
-  margin-top: 50px;
-  padding: 30px;
-  border-radius: 20px;
-  background-color: #fafafa;
-  box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.2);
+    display: flex;
+    margin-top: 50px;
+    padding: 30px;
+    border-radius: 5px;
+    background-color: #fafafa;
+    box-shadow: 3px 0 49px 0 rgba(0, 0, 0, 0.16);
 
-  img {
-    width: 150px;
-    height: auto;
-  }
-
-  .participants__info {
-    margin-left: 50px;
-    .participants__name {
-      font-size: 30px;
+    img {
+        align-self: flex-start;
+        width: 150px;
+        height: auto;
     }
 
-    .participants__info-about {
-      margin-top: 30px;
+    .participants__info {
+        margin-left: 50px;
+
+        .participants__name {
+            font-size: 30px;
+        }
+
+        .participants__info-about {
+            margin-top: 30px;
+        }
     }
-  }
 }
 </style>

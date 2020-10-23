@@ -46,9 +46,12 @@ export default {
   display: flex;
   flex-direction: column;
 
+
+
   .app-content {
     margin: 55px 0;
     flex-grow: 1;
+
   }
 }
 </style>

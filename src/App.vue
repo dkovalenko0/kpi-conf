@@ -93,7 +93,12 @@ li {
 .title {
   padding-top: 10px;
   color: #33b0ea;
+
+  @media (max-width: 612px) {
+    font-size: 22px;
+  }
 }
+
 
 .border-top {
   border-top: 3px solid #006699;
@@ -146,6 +151,15 @@ li {
     content: "!";
     font-size: 100px;
     color: coral;
+
+    @media (max-width: 612px) {
+      display: none;
+    }
+  }
+
+  @media (max-width: 612px) {
+    font-size: 12px;
   }
 }
+
 </style>

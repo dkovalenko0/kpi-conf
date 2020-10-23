@@ -10,7 +10,11 @@
           </ul>
         </div>
         <div class="success" v-if="isHidden">
-          <img src="../assets/img/success.png" alt="success" class="img-success" />
+          <img
+            src="../assets/img/success.png"
+            alt="success"
+            class="img-success"
+          />
         </div>
         <form
           class="form-signin"
@@ -33,7 +37,8 @@
             <span
               class="invalid-text"
               v-if="$v.firstName.$dirty && !$v.firstName.required"
-            >This field is required</span>
+              >This field is required</span
+            >
           </div>
 
           <div class="input-field">
@@ -50,7 +55,8 @@
             <span
               class="invalid-text"
               v-if="$v.lastName.$dirty && !$v.lastName.required"
-            >This field is required</span>
+              >This field is required</span
+            >
           </div>
 
           <div class="input-field">
@@ -67,7 +73,8 @@
             <span
               class="invalid-text"
               v-if="$v.middleName.$dirty && !$v.middleName.required"
-            >This field is required</span>
+              >This field is required</span
+            >
           </div>
 
           <div class="input-field">
@@ -86,11 +93,13 @@
             <span
               class="invalid-text"
               v-if="$v.email.$dirty && !$v.email.required"
-            >This field is required</span>
+              >This field is required</span
+            >
             <span
               class="invalid-text"
               v-else-if="$v.email.$dirty && !$v.email.email"
-            >Enter correct email</span>
+              >Enter correct email</span
+            >
           </div>
 
           <!-- <div class="input-field">
@@ -126,7 +135,8 @@
             <span
               class="invalid-text"
               v-if="$v.phone.$dirty && !$v.phone.required"
-            >This field is required</span>
+              >This field is required</span
+            >
             <!-- <span class="invalid-text" v-if="$v.phone.$dirty">Enter correct phone</span> -->
           </div>
 
@@ -144,11 +154,14 @@
             <span
               class="invalid-text"
               v-if="$v.organization.$dirty && !$v.organization.required"
-            >This field is required</span>
+              >This field is required</span
+            >
           </div>
 
           <div class="input-field">
-            <label for="authors_of_conference_paper">TITLE OF CONFERENCE PAPER: *</label>
+            <label for="authors_of_conference_paper"
+              >TITLE OF CONFERENCE PAPER: *</label
+            >
             <input
               class="form-styling"
               type="text"
@@ -161,7 +174,8 @@
             <span
               class="invalid-text"
               v-if="$v.theme.$dirty && !$v.theme.required"
-            >This field is required</span>
+              >This field is required</span
+            >
           </div>
 
           <div class="input-field">
@@ -185,7 +199,9 @@
                   v-for="filteredCountry in filteredCountries"
                   :key="filteredCountry"
                   @click="setCountry(filteredCountry)"
-                >{{ filteredCountry }}</li>
+                >
+                  {{ filteredCountry }}
+                </li>
               </ul>
             </div>
 
@@ -213,11 +229,14 @@
             <span
               class="invalid-text"
               v-if="$v.country.$dirty && !$v.country.required"
-            >This field is required</span>
+              >This field is required</span
+            >
           </div>
 
           <div class="input-field">
-            <label for="info_about_yourself">Brief information about yourself:</label>
+            <label for="info_about_yourself"
+              >Brief information about yourself:</label
+            >
             <textarea
               name="info_about_yourself"
               id
@@ -228,7 +247,9 @@
           </div>
 
           <div class="input-field">
-            <label for="scientific_interest">Area of scientific interest: *</label>
+            <label for="scientific_interest"
+              >Area of scientific interest: *</label
+            >
             <textarea
               name="scientific_interest"
               id
@@ -245,9 +266,10 @@
               class="invalid-text"
               v-if="
                 $v.areaOfScientificInterest.$dirty &&
-                  !$v.areaOfScientificInterest.required
+                !$v.areaOfScientificInterest.required
               "
-            >This field is required</span>
+              >This field is required</span
+            >
           </div>
 
           <div class="input-field checkbox-container">
@@ -285,10 +307,16 @@
           <button type="submit" class="btn-signup">Sign Up</button>
         </form>
         <div class="registration-results">
-          <p class="typo__p" v-if="submitStatus === 'OK'">Registration completed successfully</p>
-          <p class="typo__p red" v-if="submitStatus === 'ERROR'">Please fill the form correctly.</p>
+          <p class="typo__p" v-if="submitStatus === 'OK'">
+            Registration completed successfully
+          </p>
+          <p class="typo__p red" v-if="submitStatus === 'ERROR'">
+            Please fill the form correctly.
+          </p>
           <p class="typo__p" v-if="submitStatus === 'PENDING'">Sending...</p>
-          <p class="typo__p red" v-if="submitStatus === 'SERVER-ERROR'">{{ error }}</p>
+          <p class="typo__p red" v-if="submitStatus === 'SERVER-ERROR'">
+            {{ error }}
+          </p>
         </div>
       </div>
     </div>
@@ -648,7 +676,8 @@ export default {
           this.email = "";
           this.phone = "";
           this.informationAboutYourself = "";
-          (this.isSpeaker = false), (this.showPreview = false);
+          this.isSpeaker = false;
+          this.showPreview = false;
           this.isHidden = true;
         })
         .catch((e) => {
@@ -682,6 +711,8 @@ export default {
   display: flex;
 
   input {
+    // width: 24px;
+    // height: 24px;
     cursor: pointer;
   }
 }
@@ -845,9 +876,8 @@ export default {
       font-size: 13px;
       text-align: center;
       color: #ffffff;
-      padding: 15px 34px;
-      // width: 100%;
-      // height: 35px;
+      width: 100%;
+      height: 35px;
       border: none;
       outline: none;
       border-radius: 15px;

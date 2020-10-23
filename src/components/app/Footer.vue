@@ -19,7 +19,7 @@
 
 <style lang="scss" scoped>
 .footer {
-  height: 170px;
+  min-height: 170px;
   background-color: #006699;
 }
 
@@ -27,6 +27,10 @@
   padding: 40px 0;
   display: flex;
   justify-content: space-between;
+
+  @media (max-width: 1180px) {
+    padding: 40px 30px;
+  }
 }
 
 .footer__copyright {

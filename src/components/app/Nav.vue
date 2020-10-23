@@ -35,8 +35,23 @@
 </template>
 
 <style lang="scss" scoped>
+
 .nav {
   padding-top: 100px;
+
+  @media (max-width:900px) {
+    padding-top: 50px;
+  }
+
+  @media (max-width:638px) {
+    display: none;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
 }
 
 .nav__list {
@@ -54,6 +69,18 @@
 .nav__link {
   padding: 15px 15px;
   color: #777;
+
+  @media (max-width:900px) {
+    padding: 15px 10px;
+  }
+
+  @media (max-width:800px) {
+    font-size: 14px;
+  }
+
+  @media (max-width:722px) {
+    padding: 15px 5px;
+  }
 
   &:hover {
     color: #000;
