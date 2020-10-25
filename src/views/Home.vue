@@ -320,6 +320,11 @@ export default {
 .content__welcome {
   display: flex;
   justify-content: space-between;
+
+  @media (max-width: 468px) {
+    flex-direction: column-reverse;
+    align-items: flex-start;
+  }
 }
 
 .title {
@@ -336,6 +341,10 @@ export default {
 
   @media (max-width: 612px) {
     font-size: 14px;
+  }
+
+  @media (max-width: 468px) {
+    font-size: 16px;
   }
 }
 
@@ -358,6 +367,12 @@ export default {
   @media (max-width: 514px) {
     max-width: 270px;
   }
+
+  @media (max-width: 468px) {
+    margin-top: 30px;
+    padding-right: 0;
+    max-width: 900px;
+  }
 }
 
 .leftside__organizers {
@@ -368,6 +383,10 @@ export default {
 
   @media (max-width: 1180px) {
    justify-content: center;
+  }
+
+  @media (max-width: 468px) {
+    padding: 0 10px;
   }
 }
 
@@ -392,6 +411,12 @@ export default {
   @media (max-width: 514px) {
     width: 150px;
   }
+
+  @media (max-width: 468px) {
+    width: 100%;
+  }
+
+
 }
 
 .glushkov {
@@ -415,10 +440,18 @@ export default {
   @media (max-width: 514px) {
     width: 150px;
   }
+
+  @media (max-width: 468px) {
+    width: 100%;
+  }
 }
 
 .welcome__rightside {
   width: 280px;
+
+  @media (max-width: 468px) {
+    width: 100%;
+  }
 }
 
 .rightside__block {

@@ -106,6 +106,7 @@ export default {
 
       @media (max-width: 768px) {
         width: 200px;
+        align-self: center;
       }
     }
 
@@ -115,6 +116,7 @@ export default {
       @media (max-width: 768px) {
         margin-left: 0;
         margin-top: 30px;
+        text-align: center;
       }
 
         .participants__name {

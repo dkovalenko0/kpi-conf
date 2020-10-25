@@ -80,7 +80,7 @@ li {
 }
 
 .visited {
-  color: #000 !important;
+  color: #006699 !important;
 }
 
 .title--gray {

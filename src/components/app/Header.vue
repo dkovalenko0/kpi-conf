@@ -89,13 +89,13 @@ export default {
 
   @media (max-width:638px) {
     opacity: 1;
-    top: 7px;
-    left: 30px;
+    top: 7px !important;
+    left: 30px !important;
   }
 }
 
 .line-style {
-  height: 10%;
+  height: 10% !important;
 }
 
 .bm-item-list {
