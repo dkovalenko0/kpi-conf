@@ -12,7 +12,9 @@
                     <img :src="item.photo || require('../assets/img/person.png')" alt />
                     <div class="participants__info">
                         <h3 class="participants__name">{{ item.name }}</h3>
-                        <h4 class="participants__theme"></h4>
+                        <h4 class="participants__organization">{{item.organization}}</h4>
+                        <h4 class="participants__area">{{item.areaOfScientificInterest}}</h4>
+                        <h4 class="participants__theme">{{item.theme}}</h4>
                         <p class="participants__info-about">
                             {{ item.informationAboutYourself }}
                         </p>
@@ -87,6 +89,43 @@ export default {
   }
 }
 
+.participants__organization {
+  margin: 8px 0;
+  font-size: 14px;
+  font-weight: 400;
+  color: rgba(#000, .3);
+}
+
+.participants__theme {
+  margin: 8px 0;
+  font-weight: 400;
+  font-style: italic;
+
+  &:before {
+    background-image: url('../assets/img/contract.svg');
+    background-size: 16px 16px;
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin-right: 7px;
+    content:"";
+  }
+}
+
+.participants__area {
+  font-weight: 400;
+
+  &:before {
+    background-image: url('../assets/img/atom.svg');
+    background-size: 16px 16px;
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin-right: 7px;
+    content:"";
+  }
+}
+
 .participants__item {
     display: flex;
     margin-top: 50px;
@@ -125,7 +164,7 @@ export default {
         }
 
         .participants__info-about {
-            margin-top: 30px;
+            margin-top: 20px;
 
 
           @media (max-width: 768px) {
