@@ -209,13 +209,21 @@
           <li class="program__item">
             <span class="time">16:15</span>
             <div>
-              <span class="name">Pit searching system using iot technology for smartcity</span>
+              <span class="name">Turning simple microcontroller board into IoT platform</span>
+              <span class="university">Igor Sikorsky Kyiv Polytechnic Institute</span>
+              <span class="author">Igor Muravyov</span>
+            </div>
+          </li>
+          <li class="program__item">
+            <span class="time">16:30</span>
+            <div>
+              <span class="name">Pit searching system using iot technology for smartcity </span>
               <span class="university">Igor Sikorsky Kyiv Polytechnic Institute</span>
               <span class="author">Anton Kopiika</span>
             </div>
           </li>
           <li class="program__item">
-            <span class="time">16:30</span>
+            <span class="time">16:45</span>
             <div>
               <span class="name">The data transmission system based on network communication protocols for IoT</span>
               <span class="university">Igor Sikorsky Kyiv Polytechnic Institute</span>
