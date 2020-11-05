@@ -161,7 +161,7 @@
           <li class="program__item">
             <span class="time">14:00</span>
             <div>
-              <span class="name">Turning simple microcontroller board into IoT platform</span>
+              <span class="name">PoC as a learning approach in Embedde</span>
               <span class="university">GlobalLogic Ukraine</span>
               <span class="author">Viktoriia Taraniuk</span>
             </div>
