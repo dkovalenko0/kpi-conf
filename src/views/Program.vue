@@ -19,6 +19,11 @@
         <p class="text center">GlobalLogic Ukraine</p>
 
         <div class="banner__title center date">November 6, 2020 </div>
+        
+        <div class="program__link center">
+          Link to the conference broadcast:
+          <a href="https://bbb.comsys.kpi.ua/b/ser-pxp-ei8-fmr" target="_blank">https://bbb.comsys.kpi.ua/b/ser-pxp-ei8-fmr</a>
+        </div>
 
         <ul class="program__list">
           <li class="program__item">
@@ -33,6 +38,11 @@
 
         <h3 class="program__title cloud-computing__title center">Cloud Computing Section</h3>
 
+        <div class="program__link center">
+          Link to the conference broadcast:
+          <a href="https://bbb.comsys.kpi.ua/b/ser-pxp-ei8-fmr" target="_blank">https://bbb.comsys.kpi.ua/b/ser-pxp-ei8-fmr</a>
+        </div>
+
         <ul class="program__list">
           <li class="program__item">
             <span class="time">9:15</span>
@@ -45,6 +55,11 @@
         </ul>
 
         <h3 class="program__title deep-learning__title center">Deep Learning Section</h3>
+
+        <div class="program__link center">
+          Link to the conference broadcast:
+          <a href="https://bbb.comsys.kpi.ua/b/ser-pxp-ei8-fmr" target="_blank">https://bbb.comsys.kpi.ua/b/ser-pxp-ei8-fmr</a>
+        </div>
 
         <ul class="program__list">
           <li class="program__item">
@@ -83,6 +98,11 @@
 
         <h3 class="program__title information__title center">Information Systems</h3>
 
+        <div class="program__link center">
+          Link to the conference broadcast:
+          <a href="https://bbb.comsys.kpi.ua/b/ser-pxp-ei8-fmr" target="_blank">https://bbb.comsys.kpi.ua/b/ser-pxp-ei8-fmr</a>
+        </div>
+
         <ul class="program__list">
           <li class="program__item">
             <span class="time">10:45</span>
@@ -103,6 +123,11 @@
         </ul>
 
         <h3 class="program__title software__title center">Software and Applications</h3>
+
+        <div class="program__link center">
+          Link to the conference broadcast:
+          <a href="https://bbb.comsys.kpi.ua/b/ser-pxp-ei8-fmr" target="_blank">https://bbb.comsys.kpi.ua/b/ser-pxp-ei8-fmr</a>
+        </div>
 
         <ul class="program__list">
           <li class="program__item">
@@ -156,6 +181,11 @@
         </ul>
 
         <h3 class="program__title embedded__title center">Embedded Systems and Robotics</h3>
+
+        <div class="program__link center">
+          Link to the conference broadcast:
+          <a href="https://globallogic.zoom.us/j/99080141599?pwd=Q0ZZNzQveThxR0xGSTB0eE10cWdUdz09" target="_blank">https://globallogic.zoom.us/j/99080141599?pwd=Q0ZZNzQveThxR0xGSTB0eE10cWdUdz09</a>
+        </div>
 
         <ul class="program__list">
           <li class="program__item">
@@ -239,8 +269,12 @@
 
 <style lang="scss">
 
-.program__list {
+.program__link {
   margin-top: 35px;
+}
+
+.program__list {
+  margin-top: 55px;
   margin-left: 15%;
   margin-right: 15%;
 
@@ -287,7 +321,7 @@
 
 .date {
   margin-top: 55px;
-  margin-bottom: 100px;
+  margin-bottom: 35px;
 }
 
 .program__title {
