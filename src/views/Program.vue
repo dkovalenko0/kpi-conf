@@ -6,9 +6,9 @@
           <h2 class="title--gray">Program</h2>
         </div>
 
-        <div class="home__banner">
+        <div class="program__banner">
           <div class="banner__inner">
-            <div class="banner__pretitle">6rd International Conference</div>
+            <div class="banner__pretitle">6th International Conference</div>
             <div class="banner__title">High Performance Computing (HPC-UA 2020)</div>
             <div class="banner__date">November 06 - 07, 2020 Kyiv / Ukraine</div>
           </div>
@@ -25,8 +25,8 @@
             <span class="time">9:00</span>
             <div>
               <span class="name">Opening of the conference</span>
-              <span class="university">Head of Department of Computer Engineering</span>
-              <span class="author">Sergiy Stirenko</span>
+              <span class="university">Head of Computer Engineering Department</span>
+              <span class="author">Sergii Stirenko</span>
             </div>
           </li>
         </ul>
@@ -193,8 +193,8 @@
           <li class="program__item">
             <span class="time">15:45</span>
             <div>
-              <span class="name">No Title</span>
-              <span class="university">GlobalLogic Ukraine</span>
+              <span class="name">Cooperation of IT companies with universities for the development of the industry</span>
+              <span class="university">Univesity program coordinator, consultat GlobalLogic, GlobalLogic Ukraine</span>
               <span class="author">Olga Kurna</span>
             </div>
           </li>
@@ -321,7 +321,7 @@
   }
 }
 
-.home__banner {
+.program__banner {
   margin-bottom: 35px;
   width: 100%;
 

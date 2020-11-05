@@ -3,7 +3,7 @@
     <div class="container">
       <div class="home__banner">
         <div class="banner__inner">
-          <div class="banner__pretitle">6rd International Conference</div>
+          <div class="banner__pretitle">6th International Conference</div>
           <div class="banner__title">High Performance Computing</div>
           <div class="banner__posttitle">HPC-UA 2020</div>
           <div class="banner__date">November 06 - 07, 2020 Kyiv / Ukraine</div>
